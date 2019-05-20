@@ -58,10 +58,10 @@ const SelfEmploymentSection = () => {
       <div className="ibox-title">
         <h5>Self-Employment</h5>
         <div className="ibox-tools">
-          <a className="collapse-link" onClick={collapsePanel}>
+          <a className="collapse-link" onClick={collapsePanel} href="">
             <i className="fa fa-chevron-up" />
           </a>
-          <a className="close-link" onClick={closePanel}>
+          <a className="close-link" onClick={closePanel} href="">
             <i className="fa fa-times" />
           </a>
         </div>

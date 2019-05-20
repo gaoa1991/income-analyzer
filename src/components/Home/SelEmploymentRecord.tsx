@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BorrowerScheduleC } from "../../models/BorrowerScheduleC";
 import NumberFormat, { NumberFormatValues } from "react-number-format";
 import PercentLabel from "../common/PercentLabel";
@@ -117,7 +117,7 @@ class SelEmploymentRecord extends React.Component<
                 />
               </div>
               <div className="col">
-                <PercentLabel value={this.state.record.delta.netProfitLoss} />
+                <PercentLabel value={this.state.record.delta.netProfitLoss} precision={2}/>
               </div>
             </div>
           </div>

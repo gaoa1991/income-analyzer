@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import NumberFormat from "react-number-format";
-import { string } from "prop-types";
+import React from "react";
 
 export interface PercentLabelProps {
   precision: number;
@@ -8,13 +6,16 @@ export interface PercentLabelProps {
 }
 
 const PercentLabel: React.FC<PercentLabelProps> = props => {
-  if (typeof props.value === "string") {
-  }
-
-  const [val, updateVal] = useState();
-
+  let innerHtml = "";
   let iconValue = "";
   let textColor = "stat-percent font-bold text-primary";
+
+  if (typeof props.value === "string") {
+    innerHtml = props.value; 
+  }
+  else{
+    innerHtml = props.value.toFixed(props.precision) + "%";
+  }
 
   if (props.value > 0) {
     iconValue = "fa  fa-level-up";
@@ -27,7 +28,7 @@ const PercentLabel: React.FC<PercentLabelProps> = props => {
   return (
     <>
       <div className={textColor}>
-        {props.value}%<i className={iconValue} />
+        {innerHtml}<i className={iconValue} />
       </div>
     </>
   );
